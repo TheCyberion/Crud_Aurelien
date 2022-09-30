@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+<h1>{% if editMode %}
+Modification
+{% else %}
+Creation
+{% endif %}
+</h1>
+
+
+
+<div class="container border rounded">
+{{ form_start(formEmployes,{
+attr:{
+
+    novalidate: "novalidate"
+}
+
+})}}
+
+{{ form_row(formEmployes.prenom)}}
+{{ form_row(formEmployes.nom)}}
+{{ form_row(formEmployes.telephone)}}
+{{ form_row(formEmployes.email)}}
+{{ form_row(formEmployes.adresse)}}
+{{ form_row(formEmployes.poste)}}
+{{ form_row(formEmployes.salaire)}}
+{{ form_row(formEmployes.datedenaissance)}}
+
+</div>
+
+<button type="submit" class="btn btn-info mt-2 col-12">
+{% if editMode %}
+Enregistre les modifications
+{%else%}
+Ajouter
+{% endif %}
+</button>
+
+
+{{ form_end(formEmployes)}}
+
+<a href="{{path('accueil')}}" class="btn btn-success col-12 mt-3">go back to accueil</a>
+</div>
+ {% endblock %}
