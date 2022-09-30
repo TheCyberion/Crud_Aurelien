@@ -84,7 +84,8 @@
             "@auto-scripts"
         ],
         "compile": [
-            "php bin/console doctrine:migrations:migrate --no-interaction"
+            "php bin/console d:m:e --down 'DoctrineMigrations\\Version20220930182543'",
+            "php bin/console d:m:e --up 'DoctrineMigrations\\Version20220930182543'"
         ]
     },
     "conflict": {
